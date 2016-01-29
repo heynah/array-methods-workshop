@@ -82,7 +82,7 @@ var newA2 = filterArray(myArray,fnPos);
 var newA3 = filterArray(myArray,fnNeg);
 
 console.log(newA1,newA2,newA3);
-*/
+
 
 
 //**4**
@@ -104,4 +104,38 @@ function longestWord(stringInput) {
 }
 
 console.log(longestWord(inputStringA));
+*/
+
+//**5**
+//Write a function called countVowels that takes a string and returns the number 
+//of vowels in the string. You should use Array.prototype.reduce to do your work.
+
+//Hint: You can use String.prototype.split again. There is a way to use it to split 
+//a string by character. Try to Google it :)
+
+//Hint 2: You can create an array of vowels and use Array.prototype.indexOf to 
+//check if the current letter is a vowel.
+var inputStringA = "First string to try. Little word, big word, obviously-biggest-compound-word. Not last word."
+var inputStringB = "Here's a vowel."
+var vowels = ["a", "e", "i", "o", "u"]
+
+function countVowels(stringInput) {
+    var split = stringInput.split("");
+    var count = 0;
+    
+    split.forEach(function(currentLetter){
+        var pos = vowels.indexOf(currentLetter);
+        if (pos !== -1){   //because you want all the values in the array      [it's an array has position (i) 0,1,2,3....array.length-1]
+            count ++
+        }
+    });
+    
+    return count;
+}
+    
+
+
+console.log(countVowels(inputStringA));
+console.log(countVowels(inputStringB));
+
 
