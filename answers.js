@@ -37,7 +37,6 @@ function getAnyPositives(arr){
 
 console.log(getAnyPositives([8,-3,-2,5]))
 
-*/
 
 //**3**
 //Write a function called filterArray that takes an array AND a function as arguments. 
@@ -71,11 +70,11 @@ function filterArray(arr,f) {
     return arr.filter(f)
 }
 
-/* will this change my original array?
-console.log(filterArray(myArray,fn))
-console.log(filterArray(myArray,fnPos))
-console.log(filterArray(myArray,fnNeg))
-*/
+// will this change my original array?
+// console.log(filterArray(myArray,fn))
+// console.log(filterArray(myArray,fnPos))
+// console.log(filterArray(myArray,fnNeg))
+
 
 
 var newA1 = filterArray(myArray,fn);
@@ -83,9 +82,26 @@ var newA2 = filterArray(myArray,fnPos);
 var newA3 = filterArray(myArray,fnNeg);
 
 console.log(newA1,newA2,newA3);
+*/
+
 
 //**4**
 //Write a function called longestWord that takes a string as argument, and returns 
 //the longest word in the string. You should use Array.prototype.reduce to do your work.
 
 //Hint: You can use String.prototype.split to split the string into an array of words.
+
+var inputStringA = "First string to try. Little word, big word, obviously-biggest-compound-word. Not last word."
+
+
+function longestWord(stringInput) {
+    var split = stringInput.split(" ");
+    return split.reduce(function(a,b) {
+          if(a.length > b.length){
+              return a
+          } return b
+});
+}
+
+console.log(longestWord(inputStringA));
+
