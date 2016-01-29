@@ -104,7 +104,7 @@ function longestWord(stringInput) {
 }
 
 console.log(longestWord(inputStringA));
-*/
+
 
 //**5**
 //Write a function called countVowels that takes a string and returns the number 
@@ -115,6 +115,7 @@ console.log(longestWord(inputStringA));
 
 //Hint 2: You can create an array of vowels and use Array.prototype.indexOf to 
 //check if the current letter is a vowel.
+
 var inputStringA = "First string to try. Little word, big word, obviously-biggest-compound-word. Not last word."
 var inputStringB = "Here's a vowel."
 var vowels = ["a", "e", "i", "o", "u"]
@@ -136,6 +137,21 @@ function countVowels(stringInput) {
 
 
 console.log(countVowels(inputStringA));
-console.log(countVowels(inputStringB));
+console.log(countVowels(inputStringB)); 
 
+*/
+
+//**5 - .reduce solution
+
+var vowels = ["a", "e", "i", "o", "u"]
+
+function countVowels(string) {
+   var split = string.split("");
+   return split.reduce(function(acc,next){
+       if (vowels.indexOf(next) > -1){acc++}
+       return acc;
+           },0);
+}
+
+console.log (countVowels("Linguini loves avocados!"));
 
